@@ -11,17 +11,25 @@
     <div class="container">
       <nav aria-label="Hlavná navigácia">
         <a class="logo" href="/">MyShop</a>
-        <!-- Кнопка для мобильного меню -->
-        <button class="nav-toggle" 
-                aria-expanded="false" 
-                aria-controls="primary-menu" 
+        <button class="nav-toggle"
+                aria-expanded="false"
+                aria-controls="primary-menu"
                 type="button">
           Menu ☰
         </button>
+
         <ul id="primary-menu" class="nav-list">
-          <li><a href="#" aria-current="page">Katalóg</a></li>
-          <li><a href="#">Košík</a></li>
-          <li><a href="#">Kontakt</a></li>
+          <li><a href="#" data-i18n="nav.catalog">Katalóg</a></li>
+          <li><a href="#" data-i18n="nav.cart">Košík</a></li>
+          <li><a href="#" data-i18n="nav.contact">Kontakt</a></li>
+
+          <!-- Языки внутри выпадающего меню -->
+          <li>
+            <ul class="lang-switch">
+              <li><a href="#" data-lang="sk" aria-current="true" class="active">SK</a></li>
+              <li><a href="#" data-lang="ru">RU</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -30,38 +38,52 @@
   <main id="content">
     <div class="container">
       <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Vitajte v MyShop</h1>
-        <p>Toto je testovacia stránka (Day 1). Neskôr pridáme skutočný obsah a lokalizáciu sk/ru.</p>
+        <h1 id="hero-title" data-i18n="hero.title">Vitajte v MyShop</h1>
+        <p id="hero-text" data-i18n="hero.text">
+          Toto je testovacia stránka (Day 1). Neskôr pridáme skutočný obsah a lokalizáciu.
+        </p>
       </section>
 
       <section class="products" aria-labelledby="products-title">
-        <h2 id="products-title">Novinky</h2>
+        <h2 data-i18n="products.title">Novinky</h2>
 
         <div class="grid">
           <article class="card">
             <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
             <div class="body">
-              <h3>Produkt 1</h3>
+              <h3 data-i18n="products.item1">Produkt 1</h3>
               <p class="price">€ 19.90</p>
-              <a class="btn" href="#" aria-label="Pridať Produkt 1 do košíka">Do košíka</a>
+              <a class="btn"
+                 href="#"
+                 data-i18n="products.button"
+                 data-i18n-aria="products.item1.aria"
+                 aria-label="Pridať Produkt 1 do košíka">Do košíka</a>
             </div>
           </article>
 
           <article class="card">
             <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
             <div class="body">
-              <h3>Produkt 2</h3>
+              <h3 data-i18n="products.item2">Produkt 2</h3>
               <p class="price">€ 24.90</p>
-              <a class="btn" href="#" aria-label="Pridať Produkt 2 do košíka">Do košíka</a>
+              <a class="btn"
+                 href="#"
+                 data-i18n="products.button"
+                 data-i18n-aria="products.item2.aria"
+                 aria-label="Pridať Produkt 2 do košíka">Do košíka</a>
             </div>
           </article>
 
           <article class="card">
             <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
             <div class="body">
-              <h3>Produkt 3</h3>
+              <h3 data-i18n="products.item3">Produkt 3</h3>
               <p class="price">€ 14.90</p>
-              <a class="btn" href="#" aria-label="Pridať Produkt 3 do košíka">Do košíka</a>
+              <a class="btn"
+                 href="#"
+                 data-i18n="products.button"
+                 data-i18n-aria="products.item3.aria"
+                 aria-label="Pridať Produkt 3 do košíka">Do košíka</a>
             </div>
           </article>
         </div>
@@ -71,34 +93,76 @@
 
   <footer>
     <div class="container">
-      <small>© 2025 MyShop · <a href="#" rel="nofollow">Podmienky</a></small>
+      <small>
+        © 2025 MyShop · <a href="#" rel="nofollow" data-i18n="footer.terms">Podmienky</a>
+      </small>
     </div>
   </footer>
 
-  <script>
+<script>
   // ===== Mobile menu toggle =====
-  // Получаем элементы: кнопка и список меню по id/class
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.getElementById('primary-menu');
 
-  // Если один из элементов не найден — выводим в консоль и прекращаем
-  if (!navToggle) console.warn('navToggle (button.nav-toggle) not found');
-  if (!navList) console.warn('navList (#primary-menu) not found');
-
-  // Защита: выполняем только если оба элемента есть
   if (navToggle && navList) {
-    // Повесь обработчик на кнопку — срабатывает при клике
     navToggle.addEventListener('click', () => {
-      // Переключаем класс "open" у списка — это управляет видимостью в CSS
       const opened = navList.classList.toggle('open');
-
-      // Обновляем aria-expanded у кнопки для скринридеров (true/false)
       navToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
-
-      // Короткий лог для отладки — можно удалить после проверки
-      console.log('Menu toggled, opened =', opened);
     });
   }
+
+  // ===== Language switcher =====
+  let translations = {};
+  let translationsReady = false;
+
+  fetch('assets/translations.json')
+    .then(res => res.json())
+    .then(json => {
+      translations = json;
+      translationsReady = true;
+
+      // Определяем язык системы
+      const userLang = navigator.language || navigator.userLanguage || 'sk';
+      const short = userLang.substring(0,2).toLowerCase();
+      const lang = (short === 'ru') ? 'ru' : 'sk';
+
+      setLanguage(lang);
+    });
+
+  function setLanguage(lang) {
+    if (!translationsReady || !translations[lang]) return;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+
+      // Проверяем отдельный ключ для aria-label
+      if (el.hasAttribute('data-i18n-aria')) {
+        const ariaKey = el.getAttribute('data-i18n-aria');
+        if (translations[lang][ariaKey]) {
+          el.setAttribute('aria-label', translations[lang][ariaKey]);
+        }
+      }
+    });
+
+    // Обновляем переключатель языка
+    document.querySelectorAll('.lang-switch a').forEach(a => {
+      const active = a.dataset.lang === lang;
+      a.classList.toggle('active', active);
+      if (active) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    const langLink = e.target.closest('.lang-switch a');
+    if (!langLink) return;
+    e.preventDefault();
+    setLanguage(langLink.dataset.lang);
+  });
 </script>
 
 </body>

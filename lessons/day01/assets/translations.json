@@ -1,0 +1,42 @@
+{
+  "sk": {
+    "nav.catalog": "Katalóg",
+    "nav.cart": "Košík",
+    "nav.contact": "Kontakt",
+
+    "hero.title": "Vitajte v MyShop",
+    "hero.text": "Toto je testovacia stránka (Day 1). Neskôr pridáme skutočný obsah a lokalizáciu.",
+
+    "products.title": "Novinky",
+    "products.item1": "Produkt 1",
+    "products.item2": "Produkt 2",
+    "products.item3": "Produkt 3",
+    "products.button": "Do košíka",
+
+    "products.item1.aria": "Pridať Produkt 1 do košíka",
+    "products.item2.aria": "Pridať Produkt 2 do košíka",
+    "products.item3.aria": "Pridať Produkt 3 do košíka",
+
+    "footer.terms": "Podmienky"
+  },
+  "ru": {
+    "nav.catalog": "Каталог",
+    "nav.cart": "Корзина",
+    "nav.contact": "Контакт",
+
+    "hero.title": "Добро пожаловать в MyShop",
+    "hero.text": "Это тестовая страница (Day 1). Позже добавим реальный контент и локализацию.",
+
+    "products.title": "Новинки",
+    "products.item1": "Товар 1",
+    "products.item2": "Товар 2",
+    "products.item3": "Товар 3",
+    "products.button": "В корзину",
+
+    "products.item1.aria": "Добавить Товар 1 в корзину",
+    "products.item2.aria": "Добавить Товар 2 в корзину",
+    "products.item3.aria": "Добавить Товар 3 в корзину",
+
+    "footer.terms": "Условия"
+  }
+}
