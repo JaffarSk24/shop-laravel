@@ -11,7 +11,14 @@
     <div class="container">
       <nav aria-label="Hlavná navigácia">
         <a class="logo" href="/">MyShop</a>
-        <ul class="nav-list">
+        <!-- Кнопка для мобильного меню -->
+        <button class="nav-toggle" 
+                aria-expanded="false" 
+                aria-controls="primary-menu" 
+                type="button">
+          Menu ☰
+        </button>
+        <ul id="primary-menu" class="nav-list">
           <li><a href="#" aria-current="page">Katalóg</a></li>
           <li><a href="#">Košík</a></li>
           <li><a href="#">Kontakt</a></li>
@@ -67,5 +74,32 @@
       <small>© 2025 MyShop · <a href="#" rel="nofollow">Podmienky</a></small>
     </div>
   </footer>
+
+  <script>
+  // ===== Mobile menu toggle =====
+  // Получаем элементы: кнопка и список меню по id/class
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.getElementById('primary-menu');
+
+  // Если один из элементов не найден — выводим в консоль и прекращаем
+  if (!navToggle) console.warn('navToggle (button.nav-toggle) not found');
+  if (!navList) console.warn('navList (#primary-menu) not found');
+
+  // Защита: выполняем только если оба элемента есть
+  if (navToggle && navList) {
+    // Повесь обработчик на кнопку — срабатывает при клике
+    navToggle.addEventListener('click', () => {
+      // Переключаем класс "open" у списка — это управляет видимостью в CSS
+      const opened = navList.classList.toggle('open');
+
+      // Обновляем aria-expanded у кнопки для скринридеров (true/false)
+      navToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+
+      // Короткий лог для отладки — можно удалить после проверки
+      console.log('Menu toggled, opened =', opened);
+    });
+  }
+</script>
+
 </body>
 </html>

@@ -28,3 +28,15 @@ main { padding: 24px 0; display:block; }
 .price { color:#0a7a28; font-weight:600; }
 .btn { display:inline-block; padding:8px 10px; border-radius:8px; background: var(--accent); color:white; text-decoration:none; text-align:center; }
 .btn:focus, .btn:hover { filter: brightness(0.95); }
+
+/* Мобильная навигация */
+.nav-toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+.nav-toggle:focus { outline: 2px solid #2f80ed; outline-offset: 2px; }
+
+@media (max-width: 640px) {
+.nav-toggle { display: inline-block; }
+.nav-list { display: none; flex-direction: column; gap: 8px; background: #fff; position: absolute; right: 16px; top: 56px; padding: 12px; border: 1px solid #eee; border-radius: 8px; }
+.nav-list.open { display: flex; }
+/* Чуть скорректируем контейнер шапки, чтобы позиционирование работало предсказуемо */
+header .container { position: relative; }
+}
