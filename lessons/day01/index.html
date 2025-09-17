@@ -3,27 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shop — Day 1 Skeleton</title>
-  <style>
-    /* Временные стили для наглядности (потом вынесем в CSS) */
-    body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color:#222; }
-    header, footer { background:#f5f5f5; padding:12px 0; }
-    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-    nav { display:flex; align-items:center; justify-content: space-between; }
-    .logo { font-weight:700; text-decoration:none; color:#222; }
-    .nav-list { list-style:none; padding:0; margin:0; display:flex; gap:12px; }
-    .nav-list a { text-decoration:none; color:#222; }
-    main { padding: 24px 0; }
-    .hero { background:#fffbe6; border:1px solid #ffe58f; padding:16px; border-radius:8px; }
-  </style>
+  <title>MyShop — Domov</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <header>
     <div class="container">
-      <nav>
+      <nav aria-label="Hlavná navigácia">
         <a class="logo" href="/">MyShop</a>
         <ul class="nav-list">
-          <li><a href="#">Katalóg</a></li>
+          <li><a href="#" aria-current="page">Katalóg</a></li>
           <li><a href="#">Košík</a></li>
           <li><a href="#">Kontakt</a></li>
         </ul>
@@ -31,18 +20,51 @@
     </div>
   </header>
 
-  <main>
+  <main id="content">
     <div class="container">
-      <section class="hero">
-        <h1>Vitajte v MyShop</h1>
-        <p>Toto je testovacia stránka (Day 1). Neskôr sem pridáme skutočný obsah.</p>
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Vitajte v MyShop</h1>
+        <p>Toto je testovacia stránka (Day 1). Neskôr pridáme skutočný obsah a lokalizáciu sk/ru.</p>
+      </section>
+
+      <section class="products" aria-labelledby="products-title">
+        <h2 id="products-title">Novinky</h2>
+
+        <div class="grid">
+          <article class="card">
+            <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
+            <div class="body">
+              <h3>Produkt 1</h3>
+              <p class="price">€ 19.90</p>
+              <a class="btn" href="#" aria-label="Pridať Produkt 1 do košíka">Do košíka</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
+            <div class="body">
+              <h3>Produkt 2</h3>
+              <p class="price">€ 24.90</p>
+              <a class="btn" href="#" aria-label="Pridať Produkt 2 do košíka">Do košíka</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
+            <div class="body">
+              <h3>Produkt 3</h3>
+              <p class="price">€ 14.90</p>
+              <a class="btn" href="#" aria-label="Pridať Produkt 3 do košíka">Do košíka</a>
+            </div>
+          </article>
+        </div>
       </section>
     </div>
   </main>
 
   <footer>
     <div class="container">
-      <small>© 2025 MyShop</small>
+      <small>© 2025 MyShop · <a href="#" rel="nofollow">Podmienky</a></small>
     </div>
   </footer>
 </body>
