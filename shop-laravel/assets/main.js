@@ -18,10 +18,16 @@ fetch('assets/translations.json')
   .then(json => {
     translations = json;
     translationsReady = true;
-    const userLang = navigator.language || navigator.userLanguage || 'sk';
-    const short = userLang.substring(0, 2).toLowerCase();
-    const lang = (short === 'ru') ? 'ru' : 'sk';
-    setLanguage(lang); // выставляем язык при старте
+    const saved = localStorage.getItem('lang');
+    if (saved && translations[saved]) {
+      setLanguage(saved);
+    } else {
+      const userLang = navigator.language || navigator.userLanguage || 'sk';
+      const short = userLang.substring(0, 2).toLowerCase();
+      const langMap = { 'sk':'sk', 'ru':'ru', 'uk':'uk' };
+      const lang = langMap[short] || 'sk';
+      setLanguage(lang);
+    }
   });
 
 function setLanguage(lang) {
@@ -42,6 +48,8 @@ function setLanguage(lang) {
     }
   });
 
+  localStorage.setItem('lang', lang);
+  
   // подсветка активного языка в меню
   document.querySelectorAll('.lang-switch a').forEach(a => {
     const active = a.dataset.lang === lang;
@@ -62,8 +70,14 @@ document.addEventListener('click', (e) => {
 // ===== CART LOGIC =====
 let cart = [];
 function loadCart() {
-  const saved = localStorage.getItem('cart');
-  if (saved) { try { cart = JSON.parse(saved); } catch { cart = []; } }
+  const savedCart = localStorage.getItem('cart');
+  if (savedCart) { 
+    try { 
+      cart = JSON.parse(savedCart); 
+    } catch { 
+      cart = []; 
+    } 
+  }
   updateCartCount();
 }
 function saveCart() {

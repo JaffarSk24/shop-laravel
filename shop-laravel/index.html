@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MyShop — Domov</title>
+  <title data-i18n="hero.title">MyShop</title>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -15,18 +15,24 @@
                 aria-expanded="false"
                 aria-controls="primary-menu"
                 type="button">
-          Menu ☰
+          ☰
         </button>
 
         <ul id="primary-menu" class="nav-list">
           <li><a href="#" data-i18n="nav.catalog">Katalóg</a></li>
           <li><a href="#" data-i18n="nav.contact">Kontakt</a></li>
-          <li><a href="#" id="cart-link"><span data-i18n="nav.cart">Košík</span> <span id="cart-count">(0)</span></a></li>
+          <li>
+            <a href="#" id="cart-link">
+              <span data-i18n="nav.cart">Košík</span>
+              <span id="cart-count">(0)</span>
+            </a>
+          </li>
           <!-- Языки -->
           <li>
             <ul class="lang-switch">
               <li><a href="#" data-lang="sk" aria-current="true" class="active">SK</a></li>
               <li><a href="#" data-lang="ru">RU</a></li>
+              <li><a href="#" data-lang="uk">UA</a></li>
             </ul>
           </li>
         </ul>
@@ -37,15 +43,15 @@
     <div id="cart-modal" class="modal" style="display:none;">
       <div class="modal-content">
         <button id="close-cart" class="close-btn">×</button>
-        <h2 data-i18n="cart.title">Cart</h2>
+        <h2 data-i18n="cart.title">Košík</h2>
 
         <ul id="cart-items"></ul>
         <p id="cart-empty" data-i18n="products.empty" style="display:none;">Cart is empty</p>
         <p id="cart-total"></p>
 
         <div class="cart-actions">
-          <button id="clear-cart" class="btn-clear" data-i18n="cart.clear">Очистить корзину</button>
-          <button id="checkout" class="btn-checkout" data-i18n="cart.checkout">Оформить заказ</button>
+          <button id="clear-cart" class="btn-clear" data-i18n="cart.clear">Vyprázdniť košík</button>
+          <button id="checkout" class="btn-checkout" data-i18n="cart.checkout">Objednať</button>
         </div>
       </div>
     </div>
@@ -66,7 +72,7 @@
         <div class="grid">
           <!-- Products -->
           <article class="card">
-            <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
+            <div class="thumb" role="img" data-i18n-aria="products.item1.aria">Obrázok</div>
             <div class="body">
               <h3 data-i18n="products.item1">Produkt 1</h3>
               <p class="price">€ 19.90</p>
@@ -75,13 +81,12 @@
                  data-id="1"
                  data-price="19.90"
                  data-i18n="products.button"
-                 data-i18n-aria="products.item1.aria"
-                 aria-label="Pridať Produkt 1 do košíka">Do košíka</a>
+                 data-i18n-aria="products.item1.aria">Do košíka</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
+            <div class="thumb" role="img" data-i18n-aria="products.item2.aria">Obrázok</div>
             <div class="body">
               <h3 data-i18n="products.item2">Produkt 2</h3>
               <p class="price">€ 24.90</p>
@@ -90,13 +95,12 @@
                  data-id="2"
                  data-price="24.90"
                  data-i18n="products.button"
-                 data-i18n-aria="products.item2.aria"
-                 aria-label="Pridať Produkt 2 do košíka">Do košíka</a>
+                 data-i18n-aria="products.item2.aria">Do košíka</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="thumb" role="img" aria-label="Náhľad produktu">Obrázok</div>
+            <div class="thumb" role="img" data-i18n-aria="products.item3.aria">Obrázok</div>
             <div class="body">
               <h3 data-i18n="products.item3">Produkt 3</h3>
               <p class="price">€ 14.90</p>
@@ -105,8 +109,7 @@
                  data-id="3"
                  data-price="14.90"
                  data-i18n="products.button"
-                 data-i18n-aria="products.item3.aria"
-                 aria-label="Pridať Produkt 3 do košíka">Do košíka</a>
+                 data-i18n-aria="products.item3.aria">Do košíka</a>
             </div>
           </article>
         </div>

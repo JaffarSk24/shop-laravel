@@ -3,9 +3,9 @@
     "nav.catalog": "Katalóg",
     "nav.cart": "Košík",
     "cart.title": "Košík",
-    "nav.contact": "Kontakt",
     "cart.clear": "Vyprázdniť košík",
     "cart.checkout": "Objednať",
+    "nav.contact": "Kontakt",
     "products.empty": "Košík je prázdny",
     "products.total": "Spolu",
 
@@ -35,7 +35,15 @@
     "checkout.submit": "Odoslať objednávku",
 
     "order.success": "Objednávka bola úspešne odoslaná. ID objednávky: ",
-    "order.error": "Chyba pri odosielaní objednávky: "
+    "order.error": "Chyba pri odosielaní objednávky: ",
+
+    "bundle.title": "Balíček",
+    "bundle.main_service": "Hlavná služba",
+    "bundle.bonus_service": "Bonusová služba",
+    "bundle.save": "Ušetríte",
+
+    "partner.dashboard": "Prehľad partnera",
+    "admin.dashboard": "Administrácia"
   },
   "ru": {
     "nav.catalog": "Каталог",
@@ -73,6 +81,60 @@
     "checkout.submit": "Отправить заказ",
 
     "order.success": "Заказ успешно отправлен. Номер заказа: ",
-    "order.error": "Ошибка при отправке заказа: "
+    "order.error": "Ошибка при отправке заказа: ",
+
+    "bundle.title": "Баличек",
+    "bundle.main_service": "Основная услуга",
+    "bundle.bonus_service": "Бонусная услуга",
+    "bundle.save": "Вы экономите",
+
+    "partner.dashboard": "Кабинет партнёра",
+    "admin.dashboard": "Админ панель"
+  },
+  "uk": {
+    "nav.catalog": "Каталог",
+    "nav.cart": "Кошик",
+    "cart.title": "Кошик",
+    "cart.clear": "Очистити кошик",
+    "cart.checkout": "Оформити замовлення",
+    "nav.contact": "Контакт",
+    "products.empty": "Кошик порожній",
+    "products.total": "Разом",
+
+    "hero.title": "Ласкаво просимо до MyShop",
+    "hero.text": "Це тестова сторінка (Day 1). Пізніше додамо реальний контент і локалізацію.",
+
+    "products.title": "Новинки",
+    "products.item1": "Товар 1",
+    "products.item2": "Товар 2",
+    "products.item3": "Товар 3",
+    "products.button": "До кошика",
+
+    "products.item1.aria": "Додати Товар 1 до кошика",
+    "products.item2.aria": "Додати Товар 2 до кошика",
+    "products.item3.aria": "Додати Товар 3 до кошика",
+
+    "footer.terms": "Умови",
+
+    "checkout.title": "Оформлення замовлення",
+    "checkout.product": "Товар",
+    "checkout.qty": "Кількість",
+    "checkout.price": "Ціна",
+    "checkout.details": "Ваші дані",
+    "checkout.name": "Ім’я",
+    "checkout.email": "E-mail",
+    "checkout.address": "Адреса",
+    "checkout.submit": "Відправити замовлення",
+
+    "order.success": "Замовлення успішно відправлено. Номер замовлення: ",
+    "order.error": "Помилка під час відправки замовлення: ",
+
+    "bundle.title": "Балічок",
+    "bundle.main_service": "Основна послуга",
+    "bundle.bonus_service": "Бонусна послуга",
+    "bundle.save": "Ви заощадите",
+
+    "partner.dashboard": "Кабінет партнера",
+    "admin.dashboard": "Адмін панель"
   }
 }
