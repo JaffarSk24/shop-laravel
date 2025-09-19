@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="checkout.title">Checkout</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Hlavná navigácia">
+        <a href="index.html" class="logo">MyShop</a>
+        <ul id="primary-menu" class="nav-list">
+          <li><a href="index.html" data-i18n="nav.catalog">Katalóg</a></li>
+          <li><a href="#" data-i18n="nav.contact">Kontakt</a></li>
+          <li>
+            <a href="checkout.html" id="cart-link">
+              <span data-i18n="nav.cart">Košík</span>
+              <span id="cart-count">(0)</span>
+            </a>
+          </li>
+          <li>
+            <ul class="lang-switch">
+              <li><a href="#" data-lang="sk" aria-current="true" class="active">SK</a></li>
+              <li><a href="#" data-lang="ru">RU</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 data-i18n="checkout.title">Objednávka</h1>
+
+    <section>
+      <table class="checkout-table">
+        <thead>
+          <tr>
+            <th data-i18n="checkout.product">Produkt</th>
+            <th data-i18n="checkout.qty">Množstvo</th>
+            <th data-i18n="checkout.price">Cena</th>
+          </tr>
+        </thead>
+        <tbody id="checkout-items"></tbody>
+      </table>
+      <p id="checkout-total"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="checkout.details">Vaše údaje</h2>
+      <form id="checkout-form">
+        <label>
+          <span data-i18n="checkout.name">Meno</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span data-i18n="checkout.email">E-mail</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span data-i18n="checkout.address">Adresa</span>
+          <textarea name="address" required></textarea>
+        </label>
+        <button type="submit" data-i18n="checkout.submit">Odoslať objednávku</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- scripts -->
+  <script src="assets/main.js"></script>
+  <script src="assets/checkout.js"></script>
+</body>
+</html>

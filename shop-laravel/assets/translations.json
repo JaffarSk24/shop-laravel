@@ -1,0 +1,78 @@
+{
+  "sk": {
+    "nav.catalog": "Katalóg",
+    "nav.cart": "Košík",
+    "cart.title": "Košík",
+    "nav.contact": "Kontakt",
+    "cart.clear": "Vyprázdniť košík",
+    "cart.checkout": "Objednať",
+    "products.empty": "Košík je prázdny",
+    "products.total": "Spolu",
+
+    "hero.title": "Vitajte v MyShop",
+    "hero.text": "Toto je testovacia stránka (Day 1). Neskôr pridáme skutočný obsah a lokalizáciu.",
+
+    "products.title": "Novinky",
+    "products.item1": "Produkt 1",
+    "products.item2": "Produkt 2",
+    "products.item3": "Produkt 3",
+    "products.button": "Do košíka",
+
+    "products.item1.aria": "Pridať Produkt 1 do košíka",
+    "products.item2.aria": "Pridať Produkt 2 do košíka",
+    "products.item3.aria": "Pridať Produkt 3 do košíka",
+
+    "footer.terms": "Podmienky",
+
+    "checkout.title": "Objednávka",
+    "checkout.product": "Produkt",
+    "checkout.qty": "Množstvo",
+    "checkout.price": "Cena",
+    "checkout.details": "Vaše údaje",
+    "checkout.name": "Meno",
+    "checkout.email": "E-mail",
+    "checkout.address": "Adresa",
+    "checkout.submit": "Odoslať objednávku",
+
+    "order.success": "Objednávka bola úspešne odoslaná. ID objednávky: ",
+    "order.error": "Chyba pri odosielaní objednávky: "
+  },
+  "ru": {
+    "nav.catalog": "Каталог",
+    "nav.cart": "Корзина",
+    "cart.title": "Корзина",
+    "cart.clear": "Очистить корзину",
+    "cart.checkout": "Оформить заказ",
+    "nav.contact": "Контакт",
+    "products.empty": "Корзина пуста",
+    "products.total": "Итого",
+
+    "hero.title": "Добро пожаловать в MyShop",
+    "hero.text": "Это тестовая страница (Day 1). Позже добавим реальный контент и локализацию.",
+
+    "products.title": "Новинки",
+    "products.item1": "Товар 1",
+    "products.item2": "Товар 2",
+    "products.item3": "Товар 3",
+    "products.button": "В корзину",
+
+    "products.item1.aria": "Добавить Товар 1 в корзину",
+    "products.item2.aria": "Добавить Товар 2 в корзину",
+    "products.item3.aria": "Добавить Товар 3 в корзину",
+
+    "footer.terms": "Условия",
+
+    "checkout.title": "Оформление заказа",
+    "checkout.product": "Товар",
+    "checkout.qty": "Количество",
+    "checkout.price": "Цена",
+    "checkout.details": "Ваши данные",
+    "checkout.name": "Имя",
+    "checkout.email": "E-mail",
+    "checkout.address": "Адрес",
+    "checkout.submit": "Отправить заказ",
+
+    "order.success": "Заказ успешно отправлен. Номер заказа: ",
+    "order.error": "Ошибка при отправке заказа: "
+  }
+}
